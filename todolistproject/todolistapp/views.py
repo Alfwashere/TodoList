@@ -16,5 +16,11 @@ def index(request):
 def delete(request,id):
     Task.objects.filter(id=id).delete()
     return redirect ('index')
+def edit(request,id):
+    a=Task.objects.get(id=id)
+    a.completed=not a.completed
+    a.save()
+    return redirect('index')
+
 
     

@@ -97,13 +97,16 @@
     <div class="task-box">
         {% for i in  task %}
         <div class="task">
-            
-            <span>{{ i.name }}</span>
+            {% if i.completed %}
+                <strike>{{ i.name }}</strike>
+            {% else %}
+                <span>{{ i.name }}</span>
+            {% endif %}
             <span>{{ i.description }}</span>
             <span>{{ i.priority }}</span>
             <div class="buttons">
                 <a href='delete/{{ i.id }}/' >Delete</a>
-                <button>Edit</button>
+                <a href='edit/{{ i.id }}/' >Edit</a>
             </div>
             
         </div>

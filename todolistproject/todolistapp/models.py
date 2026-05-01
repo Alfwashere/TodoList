@@ -5,3 +5,4 @@ class Task(models.Model):
     name=models.CharField(max_length=100)
     description=models.CharField(blank=True)
     priority=models.CharField(max_length=10, default='low')
+    completed=models.BooleanField(default=False)
